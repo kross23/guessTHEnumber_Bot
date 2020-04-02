@@ -11,30 +11,37 @@ if(q === true || q > 0){
 let h='введите чилсо';
 
     const quest=(h)=>{    //функция выполняюшая запрс и проверку на число
-        let a = +prompt(h);  // сам запрос 
-      if(!IsNamber(a)){
+        let a = prompt(h);  // сам запрос
+      if(a !== null){
+      if(!IsNamber(a)||a === ''){
           console.log( 'повтор запроса ');
-          alert('введите число!');
+          alert('повтор введите число!');
           return quest(h);
-      }else{
+      } else{
         return a;
       }
+    }else{
+        alert('отмена');
+        return;
+    }
+
+
     };
     let ot='';
 const comparison=(a,b)=>{
   
-     if(a < b && a !== 0){
+     if(a < b && a ){
             console.log('загаданное число больше');
            ot = 'загаданное число больше, введите число';
             comparison(quest(ot),b);
-    }else if(a === b && a !== 0){
+    }else if(a === b && a ){
             console.log('число равно угадал играем еще');
             comp(confirm('угадал !! с играем еще?'));
-    }else if(a > b && a !== 0){
+    }else if(a > b && a ){
         ot = 'загаданное число меньше';
             console.log('загаданное число меньше, введите число');
    comparison(quest(ot),b);
-    }else if(a === 0){
+    }else if(a === 101 ){
         console.log('отмена игры');
     }
   };
