@@ -13,6 +13,7 @@ if(q === true || q > 0){
         let a = +prompt('введи число','55');  // сам запрос 
       if(!IsNamber(a)){
           console.log( 'повтор запроса ');
+          alert('введите число!');
           return zapros();
       }else{
         return a;
