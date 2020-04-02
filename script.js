@@ -20,9 +20,9 @@ let h='введите чилсо';
         return a;
       }
     };
-    
+    let ot='';
 const comparison=(a,b)=>{
-   let ot='';
+  
      if(a < b && a !== 0){
             console.log('загаданное число больше');
            ot = 'загаданное число больше, введите число';
@@ -38,8 +38,8 @@ const comparison=(a,b)=>{
         console.log('отмена игры');
     }
   };
-
-  comparison(zapros(),b);
+  ot = 'начало игры введите число';
+  comparison(zapros(ot),b);
 }else{
     alert('игра закончена');
 }
