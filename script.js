@@ -12,6 +12,7 @@ const comp = (q) =>{
     console.log('искомое число',b);
     console.log(q);
     let r = 1;
+    let count = 10;
 //...............................function
     const quest=(h)=>{    //функция выполняюшая запрс и проверку на число
         let a = prompt(h); 
@@ -31,20 +32,33 @@ const comp = (q) =>{
 
     };
     const comparison=(a,b)=>{
-          if(a !== null){
+          if(a !== null && count >= 2){
             if(a < b ){
+                count = count-1;
                 alert('загаданное число больше');
-               ot = 'число больше, введите число';
+               ot = 'попыток осталось ';
+               ot += count;
                           comparison(quest(ot),b);
         }else if(a > b  ){
-            ot = 'загаданное число меньше';
+            count = count-1;
+            ot = 'попыток осталось ';
+            ot += count;
             alert('число меньше, введите число');
                          comparison(quest(ot),b);//не запускается
         }else{
             alert('Угадал');
-            return;
+            if(confirm('повторить!')){
+           
+                alert('у тебя снова 10 попыток');
+                comp(1);
+            }else{
+                return;
+            }
+            
         }
           }else {
+              console.log('count', count);
+            alert('попытки кончились');
               alert('stop');
               return;
           }
@@ -55,7 +69,7 @@ const comp = (q) =>{
  if( q === true || r === 1  ){
 
   ot = 'начало игры введите число';
-  comparison(quest(ot),b);
+  comparison(quest(ot),b,count);
 }else{
      return; 
   }
