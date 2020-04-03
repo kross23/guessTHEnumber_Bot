@@ -34,22 +34,21 @@ const comp = (q) =>{
     const comparison=(a,b)=>{
           if(a !== null && count >= 2){
             if(a < b ){
-                count = count-1;
-                alert('загаданное число больше');
+                count--;
                ot = 'попыток осталось ';
                ot += count;
-                          comparison(quest(ot),b);
+               alert(ot);
+                    comparison(quest(ot),b);
         }else if(a > b  ){
-            count = count-1;
+            count--;
             ot = 'попыток осталось ';
             ot += count;
-            alert('число меньше, введите число');
-                         comparison(quest(ot),b);//не запускается
+            alert(ot);
+                   comparison(quest(ot),b);//не запускается
         }else{
             alert('Угадал');
             if(confirm('повторить!')){
-           
-                alert('у тебя снова 10 попыток');
+                alert('запускаю игру с начала');
                 comp(1);
             }else{
                 return;
@@ -57,9 +56,9 @@ const comp = (q) =>{
             
         }
           }else {
-              console.log('count', count);
-            alert('попытки кончились');
-              alert('stop');
+            console.log('count', count);
+            alert('стоп игра ');
+            //  alert('stop');
               return;
           }
      
