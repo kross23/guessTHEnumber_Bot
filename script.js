@@ -35,15 +35,19 @@ const comp = (q) =>{
           if(a !== null && count >= 2){
             if(a < b ){
                 count--;
-               ot = 'попыток осталось ';
+               ot = 'угадываемое число больше - попыток осталось ';
                ot += count;
                alert(ot);
+               ot= 'попытка номер-';
+               ot += count;
                     comparison(quest(ot),b);
         }else if(a > b  ){
             count--;
-            ot = 'попыток осталось ';
+            ot = 'угадываемое число меньше - попыток осталось ';
             ot += count;
             alert(ot);
+            ot= 'попытка номер-';
+            ot += count;
                    comparison(quest(ot),b);//не запускается
         }else{
             alert('Угадал');
