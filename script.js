@@ -2,8 +2,7 @@
 
 let IsNamber =(n)=>{
     return !isNaN(parseFloat(n))  && n !=='' ;
-
-   };
+};
 
 const comp = (q) =>{
 //...............................variable
@@ -14,7 +13,7 @@ const comp = (q) =>{
     let r = 1;
     let count = 10;
 //...............................function
-    const quest=(h)=>{    //функция выполняюшая запрс и проверку на число
+  const quest=(h)=>{    //функция выполняюшая запрс и проверку на число
         let a = prompt(h); 
         let f=false;
         if(a === null){
@@ -41,7 +40,7 @@ const comp = (q) =>{
                ot= 'попытка номер-';
                ot += count;
                     comparison(quest(ot),b);
-        }else if(a > b  ){
+            }else if(a > b  ){
             count--;
             ot = 'угадываемое число меньше - попыток осталось ';
             ot += count;
@@ -49,24 +48,26 @@ const comp = (q) =>{
             ot= 'попытка номер-';
             ot += count;
                    comparison(quest(ot),b);//не запускается
-        }else{
+            }else{
             alert('Угадал');
             if(confirm('повторить!')){
                 alert('запускаю игру с начала');
                 comp(1);
             }else{
                 return;
+                }
             }
-            
-        }
-          }else {
+          }else if(count < 2){
+            console.log('count', count);
+            alert('попытки закончились хотите сиграть еще?');
+           comp(confirm('попытки закончились хотите сиграть еще?'));
+        }else {
             console.log('count', count);
             alert('стоп игра ');
             //  alert('stop');
               return;
           }
-     
-     };
+    };
 //.......................................end function
 
  if( q === true || r === 1  ){
@@ -77,6 +78,5 @@ const comp = (q) =>{
      return; 
   }
 };
-
 
 comp(1);
