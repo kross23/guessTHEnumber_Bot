@@ -76,8 +76,8 @@ const apend = (qw) => {
                 checker = check(b);
                 apend(9);
             }else{
-                ert='вы нажали отмена';
-                return;
+                alert('вы нажали отмена');
+                return 0;
             }
             return 0;
         }
