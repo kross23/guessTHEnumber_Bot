@@ -62,7 +62,7 @@ const apend = (qw) => {
                     apend(9);
                 }else{
                     alert('вы нажали отмена');
-                    return;
+                    return 0;
                 }
                 apend(qw);
             } else if (ert === 'вы нажали отмена') {
