@@ -50,12 +50,16 @@ const apend = (qw) => {
             qw--;
             if (qw > 0) {
                 alert('число больше: попыток осталось ' + qw);
+            }else{
+                alert('число больше ');
             }
             apend(qw);
         } else if (ert === 'число меньше') {
             qw--;
             if (qw > 0) {
                 alert('число меньше : попыток осталось ' + qw);
+            }else{
+                alert('число меньше ');
             }
             apend(qw);
         } else if (ert === 'число равно') {
