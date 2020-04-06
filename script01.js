@@ -45,7 +45,7 @@ let checker = check(b);
 const apend = (qw) => {
     console.log('b', b);
     let ert = checker(quest(' ВВЕДИТЕ ЧИСЛО'));
-    if (qw > 0) {
+    if (qw >= 0) {
         if (ert === 'число больше') {
             alert('число больше: попыток осталось ' + qw);
             qw--;
@@ -56,23 +56,24 @@ const apend = (qw) => {
             apend(qw);
         } else if (ert === 'число равно') {
             alert('число равно угадал');
-            if (confirm('повторить')) {
+            if (confirm('призовая игра повторить')) {
                 b = Math.ceil(Math.random() * 100);
                 checker = check(b);
                 apend(9);
             } else {
                 alert('вы нажали отмена');
-                return 0;
+                return ;
             }
-            apend(qw);
+           
         } else if (ert === 'вы нажали отмена') {
             alert('вы нажали отмена');
             return;
         }
     } else {
         alert('попыток не осталось');
-        if (confirm('повторить')) {
+        if (confirm('повторить игру?')) {
             b = Math.ceil(Math.random() * 100);
+
             checker = check(b);
             apend(9);
         } else {
