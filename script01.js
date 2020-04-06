@@ -35,7 +35,6 @@ const check = (n) => {
             return 'число равно';
         } else if (r === null) {
             return 'вы нажали отмена';
-
         }
     };
 };
@@ -44,27 +43,27 @@ let checker = check(b);
 
 const apend = (qw) => {
     console.log('b', b);
-    let ert = checker(quest(' ВВЕДИТЕ ЧИСЛО'));
-    if (qw >= 0) {
+    // let ert = checker(quest(' ВВЕДИТЕ ЧИСЛО'));
+    if (qw > 0) {
+        let ert = checker(quest(' ВВЕДИТЕ ЧИСЛО'));
         if (ert === 'число больше') {
-            alert('число больше: попыток осталось ' + qw);
             qw--;
+            alert('число больше: попыток осталось ' + qw);
             apend(qw);
         } else if (ert === 'число меньше') {
-            alert('число меньше : попыток осталось ' + qw);
             qw--;
+            alert('число меньше : попыток осталось ' + qw);
             apend(qw);
         } else if (ert === 'число равно') {
             alert('число равно угадал');
             if (confirm('призовая игра повторить')) {
                 b = Math.ceil(Math.random() * 100);
                 checker = check(b);
-                apend(9);
+                apend(10);
             } else {
-                alert('вы нажали отмена');
-                return ;
+                alert('вы нажали отмена призовой игры');
+                return;
             }
-           
         } else if (ert === 'вы нажали отмена') {
             alert('вы нажали отмена');
             return;
@@ -73,15 +72,12 @@ const apend = (qw) => {
         alert('попыток не осталось');
         if (confirm('повторить игру?')) {
             b = Math.ceil(Math.random() * 100);
-
             checker = check(b);
-            apend(9);
+            apend(10);
         } else {
             alert('вы нажали отмена');
-            return ;
+            return;
         }
-
     }
 };
-
-apend(9);
+apend(10);
